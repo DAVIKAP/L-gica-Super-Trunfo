@@ -13,7 +13,14 @@ int main() {
     float Densidade2 = (float) Populacao2 / Area2;
     float PIBCapita1 = (float) PIB1 / Populacao1;
     float PIBCapita2 = (float) PIB2 / Populacao2;
-    int atributoComp;
+    int atributoComp1, atributoComp2;
+    int resultadoComp1, resultadoComp2;
+    float atributocarta1;
+    float atributocarta2;
+    float atributocarta1a;
+    float atributocarta2a;
+    float soma1 = atributocarta1 + atributocarta1a;
+    float soma2 = atributocarta2 + atributocarta2a;
     
   // Área para entrada de dados
 
@@ -107,126 +114,117 @@ int main() {
 
     // Área de comparação de atributo.
 
-    printf("Digite o número do atributo que deseja comparar:\n");
+    printf("MENU DE COMPARAÇÃO\n");
     printf("1. População\n");
     printf("2. Área\n");
     printf("3. PIB\n");
     printf("4. Número de pontos turísticos\n");
     printf("5. Densidade populacional\n");
     printf("6. PIB per capita\n");
-    scanf("%d", &atributoComp);
+    printf("Digite o número do primeiro atributo que deseja comparar:\n");
+    scanf("%d", &atributoComp1);
+    printf("Digite o número do segundo atributo que deseja comparar:\n");
+    scanf("%d", &atributoComp2);
 
-    switch (atributoComp) {
+    //Comparação do primeiro atributo:
+
+  switch (atributoComp1) {
   case 1:
-    if (Populacao1 > Populacao2) {
+    resultadoComp1 = (Populacao1 > Populacao2) ? "Carta 1" : "Carta 2";
+    atributocarta1 = Populacao1;
+    atributocarta2 = Populacao2;
     printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
     printf("Atributo comparado: População carta 1 e População carta 2\n");
     printf("A População da carta 1 é %d e a População da carta 2 é %d\n", Populacao1, Populacao2);
+    prinft("Carta Vencedora na comparação do atributo: %s\n", resultadoComp1);
+    printf("Soma dos atributos da carta 1: %f, soma dos atributos da carta 2: %f", soma1, soma2);
+    if (soma1 > soma2) {
     printf("A carta 1 venceu!");
-    } else if (Populacao1 < Populacao2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: População carta 1 e População carta 2\n");
-    printf("A População da carta 1 é %d e a População da carta 2 é %d\n", Populacao1, Populacao2);
-    printf("A carta 2 venceu!");
+    } else if (soma1 < soma2) {
+      print("A carta 2 venceu!");
     } else {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: População carta 1 e População carta 2\n");
-    printf("A População da carta 1 é %d e a População da carta 2 é %d\n", Populacao1, Populacao2);
-    printf("Empate!");
-    } break;
-  
+      print("Empate!");
+    }
+      break;
   case 2:
-    if (Area1 > Area2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: Área carta 1 e Área carta 2\n");
-    printf("A Área da carta 1 é %d e a Área da carta 2 é %d\n", Area1, Area2);
-    printf("A carta 1 venceu!");
-    } else if (Area1 < Area2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: Área carta 1 e Área carta 2\n");
-    printf("A Área da carta 1 é %d e a Área da carta é 2 %d\n", Area1, Area2);
-    printf("A carta 2 venceu!");
-    } else {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: Área carta 1 e Área carta 2\n");
-    printf("A Área da carta 1 é %f e a Área da carta 2 é %f\n", Area1, Area2);
-    printf("Empate!");
-    } break;
-
+    resultadoComp1 = (Area1 > Area2) ? "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp1);
+    atributocarta1 = Area1;
+    atributocarta2 = Area2;
+    break;
   case 3:
-    if (PIB1 > PIB2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: PIB carta 1 e PIB carta 2\n");
-    printf("O PIB da carta 1 é %f e o PIB da certa 2 é %f\n", PIB1, PIB2);
-    printf("A carta 1 venceu!");
-    } else if (PIB1 < PIB2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: PIB carta 1 e PIB carta 2\n");
-    printf("O PIB da carta 1 é %f e o PIB da carta 2 é %f\n", PIB1, PIB2);
-    printf("A carta 2 venceu!");
-    } else {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: PIB carta 1 e PIB carta 2\n");
-    printf("O PIB da carta 1 é %f e o PIB da carta 2 é %f\n", PIB1, PIB2);
-    printf("Empate!");
-    } break;
-  
+    resultadoComp1 = (PIB1 > PIB2) ? "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp1);
+    atributocarta1 = PIB1;
+    atributocarta2 = PIB2;
+    break;
   case 4:
-    if (Turismo1 > Turismo2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: Turismo carta 1 e Turismo carta 2\n");
-    printf("A quantidade de pontos turísticos da carta 1 é %d e a da carta 2 é %d\n", Turismo1, Turismo2);
-    printf("A carta 1 venceu!");
-    } else if (Turismo1 < Turismo2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: Turismo carta 1 e Turismo carta 2\n");
-    printf("A quantidade de pontos turísticos da carta 1 é %d e a da carta 2 é %d\n", Turismo1, Turismo2);
-    printf("A carta 2 venceu!");
-    } else {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: Turismo carta 1 e Turismo carta 2\n");
-    printf("A quantidade de pontos turísticos da carta 1 é %d e a da carta 2 é %d\n", Turismo1, Turismo2);
-    printf("Empate!");
-    } break;
-
+    resultadoComp1 = (Turismo1 > Turismo2) ? "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp1);
+    atributocarta1 = Turismo1;
+    atributocarta2 = Turismo2;
+    break;
   case 5:
-    if (Densidade1 > Densidade2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: Densidade carta 1 e Densidade carta 2\n");
-    printf("A Densidade da carta 1 é %f e a Densidade da carta 2 é %f\n", Densidade1, Densidade2);
-    printf("A carta 1 venceu!");
-    } else if (Densidade1 < Densidade2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: Densidade carta 1 e Densidade carta 2\n");
-    printf("A Densidade da carta 1 é %f e a Densidade da carta 2 é %f\n", Densidade1, Densidade2);
-    printf("A carta 2 venceu!");
-    } else {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: Densidade carta 1 e Densidade carta 2\n");
-    printf("A Densidade da carta 1 é %f e a Densidade da carta 2 é %f\n", Densidade1, Densidade2);
-    printf("Empate!");
-    } break;
-
+    resultadoComp1 = (Densidade1 < Densidade2) ? "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp1);
+    atributocarta1 = Densidade1;
+    atributocarta2 = Densidade2;
+    break;
   case 6:
-    if (PIBCapita1 > PIBCapita2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: PIB per capita carta 1 e PIB per capita carta 2\n");
-    printf("O PIB per capita da carta 1 é %f e o PIB per capita da carta 2 é %f\n", PIBCapita1, PIBCapita2);
-    printf("A carta 1 venceu!");
-    } else if (PIBCapita1 < PIBCapita2) {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: PIB per capita carta 1 e PIB per capita carta 2\n");
-    printf("O PIB per capita da carta 1 é %f e o PIB per capita da carta 2 é %f\n", PIBCapita1, PIBCapita2);
-    printf("A carta 2 venceu!");
-    } else {
-    printf("Os países digitados foram: %s e %s\n", Estado1, Estado2);
-    printf("Atributo comparado: PIB per capita carta 1 e PIB per capita carta 2\n");
-    printf("O PIB per capita da carta 1 é %f e o PIB per capita da carta 2 é %f\n", PIBCapita1, PIBCapita2);
-    printf("Empate!");
-    } break;
-
+    resultadoComp1 = (PIBCapita1 > PIBCapita2) ?  "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp1);
+    atributocarta1 = PIBCapita1;
+    atributocarta2 = PIBCapita2;
+    break;
   default:
     printf("Opção Inválida!");
     }
-    return 0;
-    }
+
+    //Comparação do segundo atributo:
+
+  switch (atributoComp2) {
+    if(atributoComp1 == atributoComp2) {
+      printf("Você deve escolher atributos diferentes!\n");
+    } else {
+    
+  case 1:
+    resultadoComp2 = (Populacao1 > Populacao2) ? "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp2);
+    atributocarta1a = Populacao1;
+    atributocarta2a = Populacao2;
+    break;
+  case 2:
+    resultadoComp2 = (Area1 > Area2) ? "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp2);
+    atributocarta1a = Area1;
+    atributocarta2a = Area2;
+    break;
+  case 3:
+    resultadoComp2 = (PIB1 > PIB2) ?  "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp2);
+    atributocarta1a = PIB1;
+    atributocarta2a = PIB2;
+    break;
+  case 4:
+    resultadoComp2 = (Turismo1 > Turismo2) ? "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp2);
+    atributocarta1a = Turismo1;
+    atributocarta2a = Turismo2;
+    break;
+  case 5:
+    resultadoComp2 = (Densidade1 < Densidade2) ? "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp2);
+    atributocarta1a = Densidade1;
+    atributocarta2a = Densidade2;
+    break;
+  case 6:
+    resultadoComp2 = (PIBCapita1 > PIBCapita2) ?  "Carta 1" : "Carta 2";
+    prinft("Vencedora: %s\n", resultadoComp2);
+    atributocarta1a = PIBCapita1;
+    atributocarta2a = PIBCapita2;
+    break;
+  default:
+    printf("Opção Inválida!");
+    }}
+  return 0;
+  }
